@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/ChainSafe/chainbridge-utils/msg"
 	log "github.com/ChainSafe/log15"
+	"github.com/parami-protocol/chainbridge-utils/msg"
 )
 
 // Writer consumes a message and makes the requried on-chain interactions.
@@ -36,7 +36,7 @@ func (r *Router) Send(msg msg.Message) error {
 	r.lock.Lock()
 	defer r.lock.Unlock()
 
-	r.log.Trace("Routing message", "src", msg.Source, "dest", msg.Destination, "nonce", msg.DepositNonce, "rId", msg.ResourceId.Hex())
+	r.log.Trace("Routing message", "src", msg.Source, "dest", msg.Destination, "nonce", msg.Nonce, "rId", msg.ResourceId.Hex())
 	w := r.registry[msg.Destination]
 	if w == nil {
 		return fmt.Errorf("unknown destination chainId: %d", msg.Destination)

@@ -14,7 +14,7 @@ The keystore file is used as a file representation of a key. It contains 4 parts
 
 This keystore also requires a password to decrypt into a usable key.
 The keystore library can be used to both encrypt keys into keystores, and decrypt keystore into keys.
-For more information on how to encrypt and decrypt from the command line, reference the README: https://github.com/ChainSafe/ChainBridge
+For more information on how to encrypt and decrypt from the command line, reference the README: https://github.com/parami-protocol/ChainBridge
 
 The Keyring
 
@@ -29,7 +29,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ChainSafe/chainbridge-utils/crypto"
+	"github.com/parami-protocol/chainbridge-utils/crypto"
 )
 
 const EnvPassword = "KEYSTORE_PASSWORD"
